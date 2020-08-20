@@ -1,6 +1,6 @@
 <?php
 
-namespace Sfneal\PhpPackageBoilerplate\Tests;
+namespace Sfneal\Helpers\Laravel\Tests;
 
 use PHPUnit\Framework\TestCase;
 
