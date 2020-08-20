@@ -1,6 +1,6 @@
 {
     "name": "sfneal/laravel-helpers",
-    "description": "Boilerplate for PHP package repo's",
+    "description": "Helper functions for Laravel applications",
     "keywords": [
         "sfneal",
         "laravel-helpers"
