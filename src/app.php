@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Cache;
  *
  * @return array
  */
-function alphabet(): array
+function alphabet()
 {
     return Cache::rememberForever('alphabet', function () {
         return range('A', 'Z');
@@ -20,7 +20,7 @@ function alphabet(): array
  * @param int $index
  * @return string
  */
-function alphabetIndex(int $index): string
+function alphabetIndex(int $index)
 {
     return alphabet()[$index];
 }
@@ -33,7 +33,7 @@ function alphabetIndex(int $index): string
  * @param string|null $default
  * @return string
  */
-function getClassName($class, $short = false, string $default = null): string
+function getClassName($class, $short = false, string $default = null)
 {
     // Attempt to resolve the $class's name
     try {
@@ -51,7 +51,7 @@ function getClassName($class, $short = false, string $default = null): string
  *
  * @return bool
  */
-function isProductionEnvironment(): bool
+function isProductionEnvironment()
 {
     return env('APP_ENV') == 'production';
 }
@@ -61,7 +61,7 @@ function isProductionEnvironment(): bool
  *
  * @return bool
  */
-function isDevelopmentEnvironment(): bool
+function isDevelopmentEnvironment()
 {
     return env('APP_ENV') == 'development';
 }
