@@ -17,9 +17,6 @@ jobs:
           dist: trusty
           env: COMPOSER_FLAGS=""
 
-        - php: 5.3
-          dist: precise
-          env: COMPOSER_FLAGS="--prefer-lowest"
         - php: 5.4
           dist: trusty
           env: COMPOSER_FLAGS="--prefer-lowest"

@@ -20,7 +20,7 @@ function alphabet()
  * @param int $index
  * @return string
  */
-function alphabetIndex(int $index)
+function alphabetIndex($index)
 {
     return alphabet()[$index];
 }
@@ -33,7 +33,7 @@ function alphabetIndex(int $index)
  * @param string|null $default
  * @return string
  */
-function getClassName($class, $short = false, string $default = null)
+function getClassName($class, $short = false, $default = null)
 {
     // Attempt to resolve the $class's name
     try {
