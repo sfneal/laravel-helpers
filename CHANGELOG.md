@@ -13,3 +13,7 @@ All notable changes to `laravel-helpers` will be documented in this file
 
 ## 0.3.0 - 2020-10-07
 - add support for Laravel 4 & php5
+
+
+## 0.3.1 - 2020-10-07
+- fix travis ci tests to use stable version of composer
