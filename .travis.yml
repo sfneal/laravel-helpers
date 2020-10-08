@@ -2,41 +2,48 @@ language: php
 
 env:
     matrix:
-        - COMPOSER_FLAGS=""
-        - COMPOSER_FLAGS="--prefer-lowest"
+        - COMPOSER_FLAGS="" COMPOSER_SELF_UPDATE_FLAGS="--snapshot"
+        - COMPOSER_FLAGS="--prefer-lowest" COMPOSER_SELF_UPDATE_FLAGS=""
 
 jobs:
     include:
-        - php: 5.4
+        - php: 5.6
+          dist: trusty
+          env: COMPOSER_FLAGS="--prefer-lowest" COMPOSER_SELF_UPDATE_FLAGS="--snapshot"
+        - php: 5.6
           dist: trusty
           env: COMPOSER_FLAGS=""
+
         - php: 5.5
           dist: trusty
-          env: COMPOSER_FLAGS=""
-        - php: 5.6
+          env: COMPOSER_FLAGS="--prefer-lowest" COMPOSER_SELF_UPDATE_FLAGS="--snapshot"
+        - php: 5.5
           dist: trusty
           env: COMPOSER_FLAGS=""
 
         - php: 5.4
           dist: trusty
-          env: COMPOSER_FLAGS="--prefer-lowest"
-        - php: 5.5
+          env: COMPOSER_FLAGS="--prefer-lowest" COMPOSER_SELF_UPDATE_FLAGS="--snapshot"
+        - php: 5.4
           dist: trusty
-          env: COMPOSER_FLAGS="--prefer-lowest"
-        - php: 5.6
-          dist: trusty
-          env: COMPOSER_FLAGS="--prefer-lowest"
+          env: COMPOSER_FLAGS=""
+
+    allow_failures:
+        - php: 8.0
+        - php: nightly
 
 php:
-    - 7.0
-    - 7.1
-    - 7.2
-    - 7.3
+    - nightly
+    - 8.0
     - 7.4
+    - 7.3
+    - 7.2
+    - 7.1
+    - 7.0
 
 before_script:
     - echo "memory_limit=4096M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
-    - travis_retry composer self-update
+    - travis_retry composer self-update ${COMPOSER_SELF_UPDATE_FLAGS}
     - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-source
 
 script:
