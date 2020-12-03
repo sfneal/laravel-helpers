@@ -17,20 +17,6 @@ jobs:
           dist: trusty
           env: COMPOSER_FLAGS=""
 
-        - php: 5.5
-          dist: trusty
-          env: COMPOSER_FLAGS="--prefer-lowest" COMPOSER_SELF_UPDATE_FLAGS="--snapshot"
-        - php: 5.5
-          dist: trusty
-          env: COMPOSER_FLAGS=""
-
-        - php: 5.4
-          dist: trusty
-          env: COMPOSER_FLAGS="--prefer-lowest" COMPOSER_SELF_UPDATE_FLAGS="--snapshot"
-        - php: 5.4
-          dist: trusty
-          env: COMPOSER_FLAGS=""
-
     allow_failures:
         -  php: 8.0
         -  php: hhvm

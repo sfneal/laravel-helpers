@@ -21,3 +21,7 @@ All notable changes to `laravel-helpers` will be documented in this file
 
 ## 0.4.0 - 2020-12-01
 - cut support for php5.5 & below
+
+
+## 0.4.1 - 2020-12-03
+- fix issues with Travis CI test matrix
