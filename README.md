@@ -1,7 +1,8 @@
 # Laravel Helper functions
 
+[![Packagist PHP support](https://img.shields.io/packagist/php-v/sfneal/laravel-helpers)](https://packagist.org/packages/sfneal/laravel-helpers)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/sfneal/laravel-helpers.svg?style=flat-square)](https://packagist.org/packages/sfneal/laravel-helpers)
-[![Build Status](https://img.shields.io/travis/sfneal/laravel-helpers/master.svg?style=flat-square)](https://travis-ci.org/sfneal/laravel-helpers)
+[![Build Status](https://travis-ci.com/sfneal/laravel-helpers.svg?branch=master&style=flat-square)](https://travis-ci.com/sfneal/laravel-helpers)
 [![Quality Score](https://img.shields.io/scrutinizer/g/sfneal/laravel-helpers.svg?style=flat-square)](https://scrutinizer-ci.com/g/sfneal/laravel-helpers)
 [![Total Downloads](https://img.shields.io/packagist/dt/sfneal/laravel-helpers.svg?style=flat-square)](https://packagist.org/packages/sfneal/laravel-helpers)
 
