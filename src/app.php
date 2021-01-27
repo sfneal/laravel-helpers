@@ -65,3 +65,14 @@ function isDevelopmentEnvironment()
 {
     return env('APP_ENV') == 'development';
 }
+
+/**
+ * Serialize and simple hash a value to create a unique ID.
+ *
+ * @param $value
+ * @return int
+ */
+function serializeHash($value)
+{
+    return crc32(serialize($value));
+}
