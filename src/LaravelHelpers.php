@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Helpers\Laravel;
-
 
 use Illuminate\Support\Facades\Cache;
 use ReflectionClass;
@@ -48,7 +46,7 @@ class LaravelHelpers
             return (new ReflectionClass($class))->{$short ? 'getShortName' : 'getName'}();
         }
 
-            // Return $default
+        // Return $default
         catch (ReflectionException $e) {
             return $default;
         }
