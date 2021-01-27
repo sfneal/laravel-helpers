@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Cache;
+use Sfneal\Helpers\Laravel\LaravelHelpers;
 
 /**
  * Return the alphabet in array form.
@@ -9,9 +9,7 @@ use Illuminate\Support\Facades\Cache;
  */
 function alphabet()
 {
-    return Cache::rememberForever('alphabet', function () {
-        return range('A', 'Z');
-    });
+    return LaravelHelpers::alphabet();
 }
 
 /**
@@ -22,7 +20,7 @@ function alphabet()
  */
 function alphabetIndex($index)
 {
-    return alphabet()[$index];
+    return LaravelHelpers::alphabetIndex($index);
 }
 
 /**
@@ -35,15 +33,7 @@ function alphabetIndex($index)
  */
 function getClassName($class, $short = false, $default = null)
 {
-    // Attempt to resolve the $class's name
-    try {
-        return (new ReflectionClass($class))->{$short ? 'getShortName' : 'getName'}();
-    }
-
-    // Return $default
-    catch (ReflectionException $e) {
-        return $default;
-    }
+    return LaravelHelpers::getClassName($class, $short, $default);
 }
 
 /**
@@ -53,7 +43,7 @@ function getClassName($class, $short = false, $default = null)
  */
 function isProductionEnvironment()
 {
-    return env('APP_ENV') == 'production';
+    return LaravelHelpers::isProductionEnvironment();
 }
 
 /**
@@ -63,7 +53,7 @@ function isProductionEnvironment()
  */
 function isDevelopmentEnvironment()
 {
-    return env('APP_ENV') == 'development';
+    return LaravelHelpers::isDevelopmentEnvironment();
 }
 
 /**
@@ -74,5 +64,5 @@ function isDevelopmentEnvironment()
  */
 function serializeHash($value)
 {
-    return crc32(serialize($value));
+    return LaravelHelpers::serializeHash($value);
 }
