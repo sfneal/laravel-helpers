@@ -16,6 +16,16 @@ You can install the package via composer:
 composer require sfneal/laravel-helpers
 ```
 
+In order to autoload to the helper functions add the following path to the autoload.files section in your composer.json.
+
+```json
+"autoload": {
+    "files": [
+        "vendor/sfneal/laravel-helpers/src/laravel.php"
+    ]
+},
+```
+
 ## Usage
 
 ``` php

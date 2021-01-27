@@ -25,15 +25,15 @@
     "autoload": {
         "psr-4": {
             "Sfneal\\Helpers\\Laravel\\": "src"
-        },
-        "files": [
-            "src/app.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
             "Sfneal\\Helpers\\Laravel\\Tests\\": "tests"
-        }
+        },
+        "files": [
+            "src/laravel.php"
+        ]
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
