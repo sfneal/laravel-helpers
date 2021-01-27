@@ -35,6 +35,12 @@ All notable changes to `laravel-helpers` will be documented in this file
 
 
 ## 0.6.0 - 2021-01-27
-- add orchestra/testbench to dev requirements
 - cut support for php5
 - add test suite for testing LaravelHelpers functionality
+- add orchestra/testbench to dev requirements
+
+
+## 1.0.0 - 2021-01-27
+- initial production release
+- fix laravel/framework & phpunit/phpunit min versions
+- add improved type hinting
