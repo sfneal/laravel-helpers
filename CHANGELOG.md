@@ -41,6 +41,10 @@ All notable changes to `laravel-helpers` will be documented in this file
 
 
 ## 1.0.0 - 2021-01-27
-- initial production release
 - fix laravel/framework & phpunit/phpunit min versions
 - add improved type hinting
+- initial production release
+
+
+## 1.0.1 - 2021-01-27
+- cut support for php7.0
