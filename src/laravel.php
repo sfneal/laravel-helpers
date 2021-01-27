@@ -7,7 +7,7 @@ use Sfneal\Helpers\Laravel\LaravelHelpers;
  *
  * @return array
  */
-function alphabet()
+function alphabet(): array
 {
     return LaravelHelpers::alphabet();
 }
@@ -18,7 +18,7 @@ function alphabet()
  * @param int $index
  * @return string
  */
-function alphabetIndex($index)
+function alphabetIndex(int $index): string
 {
     return LaravelHelpers::alphabetIndex($index);
 }
@@ -31,7 +31,7 @@ function alphabetIndex($index)
  * @param string|null $default
  * @return string
  */
-function getClassName($class, $short = false, $default = null)
+function getClassName($class, $short = false, $default = null): string
 {
     return LaravelHelpers::getClassName($class, $short, $default);
 }
@@ -41,7 +41,7 @@ function getClassName($class, $short = false, $default = null)
  *
  * @return bool
  */
-function isProductionEnvironment()
+function isProductionEnvironment(): bool
 {
     return LaravelHelpers::isProductionEnvironment();
 }
@@ -51,7 +51,7 @@ function isProductionEnvironment()
  *
  * @return bool
  */
-function isDevelopmentEnvironment()
+function isDevelopmentEnvironment(): bool
 {
     return LaravelHelpers::isDevelopmentEnvironment();
 }
@@ -62,7 +62,7 @@ function isDevelopmentEnvironment()
  * @param $value
  * @return int
  */
-function serializeHash($value)
+function serializeHash($value): int
 {
     return LaravelHelpers::serializeHash($value);
 }

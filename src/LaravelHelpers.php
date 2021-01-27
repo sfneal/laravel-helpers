@@ -13,7 +13,7 @@ class LaravelHelpers
      *
      * @return array
      */
-    public static function alphabet()
+    public static function alphabet(): array
     {
         return Cache::rememberForever('alphabet', function () {
             return range('A', 'Z');
@@ -26,7 +26,7 @@ class LaravelHelpers
      * @param int $index
      * @return string
      */
-    public static function alphabetIndex($index)
+    public static function alphabetIndex(int $index): string
     {
         return self::alphabet()[$index];
     }
@@ -39,7 +39,7 @@ class LaravelHelpers
      * @param string|null $default
      * @return string
      */
-    public static function getClassName($class, $short = false, $default = null)
+    public static function getClassName($class, $short = false, $default = null): string
     {
         // Attempt to resolve the $class's name
         try {
@@ -57,7 +57,7 @@ class LaravelHelpers
      *
      * @return bool
      */
-    public static function isProductionEnvironment()
+    public static function isProductionEnvironment(): bool
     {
         return env('APP_ENV') == 'production';
     }
@@ -67,7 +67,7 @@ class LaravelHelpers
      *
      * @return bool
      */
-    public static function isDevelopmentEnvironment()
+    public static function isDevelopmentEnvironment(): bool
     {
         return env('APP_ENV') == 'development';
     }
@@ -78,7 +78,7 @@ class LaravelHelpers
      * @param $value
      * @return int
      */
-    public static function serializeHash($value)
+    public static function serializeHash($value): int
     {
         return crc32(serialize($value));
     }
