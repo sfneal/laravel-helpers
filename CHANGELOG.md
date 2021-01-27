@@ -25,3 +25,10 @@ All notable changes to `laravel-helpers` will be documented in this file
 
 ## 0.4.1 - 2020-12-03
 - fix issues with Travis CI test matrix
+
+
+## 0.5.0 - 2021-01-27
+- add serializeHash method to helper functions 
+- make LaravelHelpers class with static methods 
+- add badges to readme 
+- cut autoloading of helper functions in composer.json
