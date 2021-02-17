@@ -67,9 +67,8 @@ function serializeHash($value): int
     return LaravelHelpers::serializeHash($value);
 }
 
-
 /**
- * Retrieve a random float between two values with a specified number of decimals
+ * Retrieve a random float between two values with a specified number of decimals.
  *
  * @param $min
  * @param $max
