@@ -14,6 +14,7 @@ class LaravelHelpersTest extends TestCase
     {
         $expected = range('A', 'Z');
         $output = LaravelHelpers::alphabet();
+
         $this->assertTrue($output == $expected);
     }
 
@@ -26,6 +27,7 @@ class LaravelHelpersTest extends TestCase
         $index = random_int(1, 26);
         $expected = LaravelHelpers::alphabet()[$index];
         $output = LaravelHelpers::alphabetIndex($index);
+
         $this->assertTrue($output == $expected);
     }
 
@@ -34,6 +36,7 @@ class LaravelHelpersTest extends TestCase
     {
         $expected = 'Illuminate\Database\Eloquent\Model';
         $output = LaravelHelpers::getClassName(Model::class);
+
         $this->assertTrue($output == $expected);
     }
 
@@ -42,6 +45,7 @@ class LaravelHelpersTest extends TestCase
     {
         $expected = 'Model';
         $output = LaravelHelpers::getClassName(Model::class, true);
+
         $this->assertTrue($output == $expected);
     }
 
@@ -50,7 +54,16 @@ class LaravelHelpersTest extends TestCase
     {
         $expected = 1106692049;
         $output = LaravelHelpers::serializeHash("Here's a random string to hash.");
+
         $this->assertIsInt($output);
         $this->assertTrue($output == $expected);
+    }
+
+    /** @test */
+    public function randomFloat()
+    {
+        $value = LaravelHelpers::randomFloat(1, 1000);
+
+        $this->assertIsFloat($value);
     }
 }

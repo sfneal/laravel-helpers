@@ -66,3 +66,17 @@ function serializeHash($value): int
 {
     return LaravelHelpers::serializeHash($value);
 }
+
+
+/**
+ * Retrieve a random float between two values with a specified number of decimals
+ *
+ * @param $min
+ * @param $max
+ * @param int $decimals
+ * @return float
+ */
+function randomFloat(int $min, int $max, int $decimals = 2): float
+{
+    return LaravelHelpers::randomFloat($min, $max, $decimals);
+}

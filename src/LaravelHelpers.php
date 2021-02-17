@@ -80,6 +80,21 @@ class LaravelHelpers
      */
     public static function serializeHash($value): int
     {
+
         return crc32(serialize($value));
+    }
+
+    /**
+     * Retrieve a random float between two values with a specified number of decimals
+     *
+     * @param $min
+     * @param $max
+     * @param int $decimals
+     * @return float
+     */
+    public static function randomFloat(int $min, int $max, int $decimals = 2): float
+    {
+        $decimal = str_pad("1", $decimals + 1, '0');
+        return rand($min, $max) + (rand(1, $decimal) / $decimal);
     }
 }
