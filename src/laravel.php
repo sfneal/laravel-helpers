@@ -79,3 +79,14 @@ function randomFloat(int $min, int $max, int $decimals = 2): float
 {
     return LaravelHelpers::randomFloat($min, $max, $decimals);
 }
+
+/**
+ * Determine if a string is a Binary String
+ *
+ * @param string $string
+ * @return bool
+ */
+function isBinary(string $string): bool
+{
+    return LaravelHelpers::isBinary($string);
+}

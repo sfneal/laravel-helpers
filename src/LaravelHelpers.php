@@ -97,4 +97,15 @@ class LaravelHelpers
 
         return rand($min, $max) + (rand(1, $decimal) / $decimal);
     }
+
+    /**
+     * Determine if a string is a Binary String
+     *
+     * @param string $string
+     * @return bool
+     */
+    public static function isBinary(string $string): bool
+    {
+        return preg_match('~[^\x20-\x7E\t\r\n]~', $string) > 0;
+    }
 }
