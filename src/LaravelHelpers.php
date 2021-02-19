@@ -99,7 +99,7 @@ class LaravelHelpers
     }
 
     /**
-     * Determine if a string is a Binary String
+     * Determine if a string is a Binary String.
      *
      * @param string $string
      * @return bool
@@ -149,5 +149,4 @@ class LaravelHelpers
 
         return false;
     }
-
 }

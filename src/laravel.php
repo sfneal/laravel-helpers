@@ -81,7 +81,7 @@ function randomFloat(int $min, int $max, int $decimals = 2): float
 }
 
 /**
- * Determine if a string is a Binary String
+ * Determine if a string is a Binary String.
  *
  * @param string $string
  * @return bool
