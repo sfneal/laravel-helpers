@@ -174,4 +174,16 @@ class LaravelHelpersTest extends TestCase
         $this->assertTrue($isBinary);
         $this->assertFalse($isNotBinary);
     }
+
+    /** @test */
+    public function isSerialized()
+    {
+        $array = ['key' => 'value'];
+        $value = serialize($array);
+        $isSerialized = LaravelHelpers::isSerialized($value);
+        $isNotSerialized = LaravelHelpers::isSerialized($array);
+
+        $this->assertTrue($isSerialized);
+        $this->assertFalse($isNotSerialized);
+    }
 }

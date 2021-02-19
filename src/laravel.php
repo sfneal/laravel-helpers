@@ -90,3 +90,16 @@ function isBinary(string $string): bool
 {
     return LaravelHelpers::isBinary($string);
 }
+
+/**
+ * Determine if a string is serialized.
+ *
+ * https://stackoverflow.com/questions/1369936/check-to-see-if-a-string-is-serialized/4994628
+ *
+ * @param $data
+ * @return bool
+ */
+function isSerialized($data): bool
+{
+    return LaravelHelpers::isSerialized($data);
+}
