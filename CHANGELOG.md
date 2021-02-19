@@ -52,3 +52,8 @@ All notable changes to `laravel-helpers` will be documented in this file
 
 ## 1.0.2 - 2021-02-17
 - add randomFloat() helper function & static method with test methods
+
+
+## 1.0.3 - 2021-02-19
+- add isBinary() LaravelHelpers method & helper function for checking if a string is a Binary String
+- add isSerialized() LaravelHelpers method & helper function for checking if a string is serialized
