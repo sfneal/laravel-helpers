@@ -24,7 +24,7 @@ class LaravelHelpersTest extends TestCase
      */
     public function alphabetIndex()
     {
-        $index = random_int(1, 26);
+        $index = random_int(1, 25);
         $expected = LaravelHelpers::alphabet()[$index];
         $output = LaravelHelpers::alphabetIndex($index);
 
