@@ -23,7 +23,7 @@ class AppInfo
     public static function version()
     {
         return Cache::rememberForever(self::cacheKey('version'), function () {
-            return file_get_contents(base_path('version.txt')).((env('APP_ENV') == 'development') ? ' (dev)' : '');
+            return config('app-info.version').((env('APP_ENV') == 'development') ? ' (dev)' : '');
         });
     }
 
@@ -56,7 +56,7 @@ class AppInfo
     {
         return Cache::rememberForever(self::cacheKey('changelog'), function () {
             // Read the changelog
-            $file_lines = file(base_path('changelog.txt'));
+            $file_lines = file(config('app-info.changelog_path'));
             $changes = [];
 
             for ($row = 0; $row < count($file_lines); $row++) {
