@@ -2,9 +2,6 @@
 
 use Sfneal\Helpers\Laravel\LaravelHelpers;
 
-// Include app-info.php helpers
-include dirname(__FILE__).DIRECTORY_SEPARATOR.'app-info.php';
-
 /**
  * Return the alphabet in array form.
  *

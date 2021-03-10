@@ -41,7 +41,8 @@
             "Sfneal\\Helpers\\Laravel\\Tests\\": "tests"
         },
         "files": [
-            "src/laravel.php"
+            "src/Helpers/app-info.php",
+            "src/Helpers/laravel.php"
         ]
     },
     "scripts": {

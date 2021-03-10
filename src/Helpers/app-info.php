@@ -1,7 +1,6 @@
 <?php
 
 use Sfneal\Helpers\Laravel\AppInfo;
-use Sfneal\Helpers\Laravel\LaravelHelpers;
 
 /**
  * Shortcode helper function for retrieving the application's version.
@@ -20,7 +19,7 @@ function version()
  */
 function isProductionEnvironment(): bool
 {
-    return LaravelHelpers::isProductionEnvironment();
+    return AppInfo::isEnvProduction();
 }
 
 /**
@@ -30,5 +29,5 @@ function isProductionEnvironment(): bool
  */
 function isDevelopmentEnvironment(): bool
 {
-    return LaravelHelpers::isDevelopmentEnvironment();
+    return AppInfo::isEnvDevelopment();
 }
