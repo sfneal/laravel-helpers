@@ -25,7 +25,7 @@ class AppInfo
     {
         return Cache::rememberForever(self::cacheKey('version'), function () {
             // toto: refactor environment method to AppInfo
-            return trim(config('app-info.version').(self::isEnvironmentDevelopment() ? ' (dev)' : ''));
+            return trim(config('app-info.version').(self::isEnvDevelopment() ? ' (dev)' : ''));
         });
     }
 
@@ -153,7 +153,7 @@ class AppInfo
      *
      * @return bool
      */
-    public static function isEnvironmentProduction(): bool
+    public static function isEnvProduction(): bool
     {
         return self::isEnv('production');
     }
@@ -163,7 +163,7 @@ class AppInfo
      *
      * @return bool
      */
-    public static function isEnvironmentDevelopment(): bool
+    public static function isEnvDevelopment(): bool
     {
         return self::isEnv('development');
     }
