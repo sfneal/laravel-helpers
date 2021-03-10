@@ -16,7 +16,6 @@ class AppInfoTest extends TestCase
         $this->assertEquals($expected, $output);
     }
 
-
     /** @test */
     public function versionChanges()
     {
