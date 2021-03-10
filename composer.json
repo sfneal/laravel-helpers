@@ -27,7 +27,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Sfneal\\LaravelHelpers\\Providers\\AppInfoServiceProvider"
+                "Sfneal\\Helpers\\Laravel\\Providers\\AppInfoServiceProvider"
             ]
         }
     },

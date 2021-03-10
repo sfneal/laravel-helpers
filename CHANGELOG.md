@@ -63,3 +63,7 @@ All notable changes to `laravel-helpers` will be documented in this file
 - make AppInfo service for retrieving information about your Laravel Application like the version, most recent changes or environment
 - add ServiceProvider with config file for modifying app version & changing the changelog's path
 - add sfneal/string-helpers to composer requirements
+
+
+## 2.0.1 - 2021-03-10
+- fix ServiceProvider namespace in composer.json
