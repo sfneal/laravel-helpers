@@ -21,9 +21,16 @@ In order to autoload to the helper functions add the following path to the autol
 ```json
 "autoload": {
     "files": [
-        "vendor/sfneal/laravel-helpers/src/laravel.php"
+        "vendor/sfneal/laravel-helpers/src/Helpers/laravel.php",
+        "vendor/sfneal/laravel-helpers/src/Helpers/app-info.php"
     ]
 },
+```
+
+To modify the application info 'version' & 'changelog_path' setting publish the ServiceProvider & modify the config.
+
+``` php
+php artisan vendor:publish --provider="Sfneal\Helpers\Laravel\Providers\AppInfoServiceProvider"
 ```
 
 ## Usage

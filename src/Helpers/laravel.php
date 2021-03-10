@@ -37,26 +37,6 @@ function getClassName($class, $short = false, $default = null): string
 }
 
 /**
- * Determine if the Application is running in a 'production' environment.
- *
- * @return bool
- */
-function isProductionEnvironment(): bool
-{
-    return LaravelHelpers::isProductionEnvironment();
-}
-
-/**
- * Determine if the Application is running in a 'development' environment.
- *
- * @return bool
- */
-function isDevelopmentEnvironment(): bool
-{
-    return LaravelHelpers::isDevelopmentEnvironment();
-}
-
-/**
  * Serialize and simple hash a value to create a unique ID.
  *
  * @param $value

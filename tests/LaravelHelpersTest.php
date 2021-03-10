@@ -4,7 +4,6 @@ namespace Sfneal\Helpers\Laravel\Tests;
 
 use Exception;
 use Illuminate\Database\Eloquent\Model;
-use Orchestra\Testbench\TestCase;
 use Sfneal\Helpers\Laravel\LaravelHelpers;
 
 class LaravelHelpersTest extends TestCase
@@ -15,7 +14,7 @@ class LaravelHelpersTest extends TestCase
         $expected = range('A', 'Z');
         $output = LaravelHelpers::alphabet();
 
-        $this->assertTrue($output == $expected);
+        $this->assertEquals($output, $expected);
     }
 
     /**
@@ -28,7 +27,7 @@ class LaravelHelpersTest extends TestCase
         $expected = LaravelHelpers::alphabet()[$index];
         $output = LaravelHelpers::alphabetIndex($index);
 
-        $this->assertTrue($output == $expected);
+        $this->assertEquals($output, $expected);
     }
 
     /** @test */
@@ -37,7 +36,7 @@ class LaravelHelpersTest extends TestCase
         $expected = 'Illuminate\Database\Eloquent\Model';
         $output = LaravelHelpers::getClassName(Model::class);
 
-        $this->assertTrue($output == $expected);
+        $this->assertEquals($output, $expected);
     }
 
     /** @test */
@@ -46,7 +45,7 @@ class LaravelHelpersTest extends TestCase
         $expected = 'Model';
         $output = LaravelHelpers::getClassName(Model::class, true);
 
-        $this->assertTrue($output == $expected);
+        $this->assertEquals($output, $expected);
     }
 
     /** @test */
@@ -56,7 +55,8 @@ class LaravelHelpersTest extends TestCase
         $output = LaravelHelpers::serializeHash("Here's a random string to hash.");
 
         $this->assertIsInt($output);
-        $this->assertTrue($output == $expected);
+        $this->assertEquals($output, $expected);
+        $this->assertEquals($output, $expected);
     }
 
     /** @test */

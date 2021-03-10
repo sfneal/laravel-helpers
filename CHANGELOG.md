@@ -57,3 +57,9 @@ All notable changes to `laravel-helpers` will be documented in this file
 ## 1.0.3 - 2021-02-19
 - add isBinary() LaravelHelpers method & helper function for checking if a string is a Binary String
 - add isSerialized() LaravelHelpers method & helper function for checking if a string is serialized
+
+
+## 2.0.0 - 2021-03-10
+- make AppInfo service for retrieving information about your Laravel Application like the version, most recent changes or environment
+- add ServiceProvider with config file for modifying app version & changing the changelog's path
+- add sfneal/string-helpers to composer requirements
