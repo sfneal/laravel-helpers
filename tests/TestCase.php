@@ -19,6 +19,8 @@ class TestCase extends OrchestraTestCase
     protected function getEnvironmentSetUp($app)
     {
         $app['config']->set('app.debug', true);
+        $app['config']->set('app-info.version', '1.7.2');
+        $app['config']->set('app-info.changelog_path', base_path('changelog.txt'));
     }
 
     /**
