@@ -155,8 +155,7 @@ class AppInfo
      */
     public static function isEnvironmentProduction(): bool
     {
-        // todo: add use of config
-        return env('APP_ENV') == 'production';
+        return self::isEnv('production');
     }
 
     /**
@@ -166,8 +165,18 @@ class AppInfo
      */
     public static function isEnvironmentDevelopment(): bool
     {
-        // todo: add use of config
-        return env('APP_ENV') == 'development';
+        return self::isEnv('development');
+    }
+
+    /**
+     * Determine if the application is in a particular environment.
+     *
+     * @param string $env
+     * @return bool
+     */
+    public static function isEnv(string $env): bool
+    {
+        return config('app.env') == $env;
     }
 
     /**
