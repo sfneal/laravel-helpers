@@ -114,13 +114,23 @@ class AppInfo
     }
 
     /**
-     * Determine if a 'BETA' version is running.
+     * Determine if a 'beta' version is running.
      *
      * @return mixed
      */
     public static function isVersionTagBeta(): bool
     {
         return self::isVersionTag('beta');
+    }
+
+    /**
+     * Determine if a 'dev' version is running.
+     *
+     * @return mixed
+     */
+    public static function isVersionTagDev(): bool
+    {
+        return self::isVersionTag('dev');
     }
 
     /**
