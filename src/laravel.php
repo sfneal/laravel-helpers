@@ -1,5 +1,6 @@
 <?php
 
+use Sfneal\Helpers\Laravel\AppInfo;
 use Sfneal\Helpers\Laravel\LaravelHelpers;
 
 /**
@@ -102,4 +103,14 @@ function isBinary(string $string): bool
 function isSerialized($data): bool
 {
     return LaravelHelpers::isSerialized($data);
+}
+
+/**
+ * Shortcode helper function for retrieving the application's version.
+ *
+ * @return mixed
+ */
+function version()
+{
+    return AppInfo::version();
 }
