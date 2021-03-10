@@ -105,6 +105,14 @@ class AppInfoTest extends TestCase
     }
 
     /** @test */
+    public function isVersionTagNotBeta()
+    {
+        $output = AppInfo::isVersionTagBeta();
+        $this->assertIsBool($output);
+        $this->assertFalse($output);
+    }
+
+    /** @test */
     public function isVersionTagBeta()
     {
         $this->app['config']->set(
@@ -112,8 +120,28 @@ class AppInfoTest extends TestCase
             file_get_contents(__DIR__.'/../version.txt') . '-beta'
         );
 
-        $output2 = AppInfo::isVersionTagBeta();
-        $this->assertIsBool($output2);
-        $this->assertTrue($output2);
+        $output = AppInfo::isVersionTagBeta();
+        $this->assertIsBool($output);
+        $this->assertTrue($output);
+    }
+
+    /** @test */
+    public function isVersionTagNotDev()
+    {
+        $output = AppInfo::isVersionTagDev();
+        $this->assertIsBool($output);
+        $this->assertFalse($output);
+    }
+
+    /** @test */
+    public function isVersionTagDev()
+    {
+        $expected = '1.7.2 (dev)';
+        $this->app['config']->set('app.env', 'development');
+
+        $output = AppInfo::isVersionTagDev();
+        $this->assertIsBool($output);
+        $this->assertTrue($output);
+        $this->assertEquals($expected, AppInfo::version());
     }
 }
