@@ -103,4 +103,17 @@ class AppInfoTest extends TestCase
         $this->assertIsBool($output2);
         $this->assertFalse($output2);
     }
+
+    /** @test */
+    public function isVersionTagBeta()
+    {
+        $this->app['config']->set(
+            'app-info.version',
+            file_get_contents(__DIR__.'/../version.txt') . '-beta'
+        );
+
+        $output2 = AppInfo::isVersionTagBeta();
+        $this->assertIsBool($output2);
+        $this->assertTrue($output2);
+    }
 }
