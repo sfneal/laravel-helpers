@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Helpers\Laravel\Providers;
-
 
 use Illuminate\Support\ServiceProvider;
 
