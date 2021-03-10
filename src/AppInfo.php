@@ -25,7 +25,7 @@ class AppInfo
     {
         return Cache::rememberForever(self::cacheKey('version'), function () {
             // toto: refactor environment method to AppInfo
-            return trim(config('app-info.version')) . (self::isEnvDevelopment() ? ' (dev)' : '');
+            return trim(config('app-info.version')).(self::isEnvDevelopment() ? ' (dev)' : '');
         });
     }
 
@@ -143,7 +143,7 @@ class AppInfo
      */
     public static function isVersionTag(string $tag): bool
     {
-        return Cache::rememberForever(self::cacheKey("version", "is-{$tag}"), function () use ($tag) {
+        return Cache::rememberForever(self::cacheKey('version', "is-{$tag}"), function () use ($tag) {
             return (new StringHelpers(self::version()))->inString($tag);
         });
     }
