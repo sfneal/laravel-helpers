@@ -4,7 +4,6 @@ namespace Sfneal\Helpers\Laravel\Tests;
 
 use Exception;
 use Illuminate\Database\Eloquent\Model;
-use Orchestra\Testbench\TestCase;
 use Sfneal\Helpers\Laravel\LaravelHelpers;
 
 class LaravelHelpersTest extends TestCase
