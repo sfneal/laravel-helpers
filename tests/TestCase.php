@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Helpers\Laravel\Tests;
-
 
 use Illuminate\Foundation\Application;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
