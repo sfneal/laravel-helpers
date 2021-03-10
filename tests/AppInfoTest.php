@@ -117,7 +117,7 @@ class AppInfoTest extends TestCase
     {
         $this->app['config']->set(
             'app-info.version',
-            file_get_contents(__DIR__.'/../version.txt') . '-beta'
+            file_get_contents(__DIR__.'/../version.txt').'-beta'
         );
         $output = AppInfo::isVersionTagBeta();
 
