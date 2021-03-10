@@ -1,7 +1,9 @@
 <?php
 
-use Sfneal\Helpers\Laravel\AppInfo;
 use Sfneal\Helpers\Laravel\LaravelHelpers;
+
+// Include app-info.php helpers
+include dirname(__FILE__) . DIRECTORY_SEPARATOR . 'app-info.php';
 
 /**
  * Return the alphabet in array form.
@@ -35,26 +37,6 @@ function alphabetIndex(int $index): string
 function getClassName($class, $short = false, $default = null): string
 {
     return LaravelHelpers::getClassName($class, $short, $default);
-}
-
-/**
- * Determine if the Application is running in a 'production' environment.
- *
- * @return bool
- */
-function isProductionEnvironment(): bool
-{
-    return LaravelHelpers::isProductionEnvironment();
-}
-
-/**
- * Determine if the Application is running in a 'development' environment.
- *
- * @return bool
- */
-function isDevelopmentEnvironment(): bool
-{
-    return LaravelHelpers::isDevelopmentEnvironment();
 }
 
 /**
@@ -103,14 +85,4 @@ function isBinary(string $string): bool
 function isSerialized($data): bool
 {
     return LaravelHelpers::isSerialized($data);
-}
-
-/**
- * Shortcode helper function for retrieving the application's version.
- *
- * @return mixed
- */
-function version()
-{
-    return AppInfo::version();
 }
