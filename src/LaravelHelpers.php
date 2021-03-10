@@ -59,6 +59,7 @@ class LaravelHelpers
      */
     public static function isProductionEnvironment(): bool
     {
+        // todo: add use of config
         return env('APP_ENV') == 'production';
     }
 
@@ -69,6 +70,7 @@ class LaravelHelpers
      */
     public static function isDevelopmentEnvironment(): bool
     {
+        // todo: add use of config
         return env('APP_ENV') == 'development';
     }
 
