@@ -98,9 +98,7 @@ class AppInfo
      */
     public static function isVersion(string $version): bool
     {
-        return Cache::rememberForever(self::cacheKey("version#is-{$version}"), function () use ($version) {
-            return self::version() == $version;
-        });
+        return self::version() == $version;
     }
 
     /**
