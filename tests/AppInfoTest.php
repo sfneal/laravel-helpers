@@ -91,4 +91,16 @@ class AppInfoTest extends TestCase
         $this->assertIsArray($output);
         $this->assertEquals($expected, $output);
     }
+
+    /** @test */
+    public function isVersion()
+    {
+        $output1 = AppInfo::isVersion('1.7.2');
+        $this->assertIsBool($output1);
+        $this->assertTrue($output1);
+
+        $output2 = AppInfo::isVersion('1.7.3');
+        $this->assertIsBool($output2);
+        $this->assertFalse($output2);
+    }
 }
