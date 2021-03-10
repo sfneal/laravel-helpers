@@ -68,7 +68,7 @@ class AppInfo
                     // Extract version and date
                     $date = $version_date[1];
                     $version = explode(' ', $version_date[0])[1];
-                    $changes[$version] = ['date' => $date, 'changes' => []];
+                    $changes[$version] = ['date' => trim($date), 'changes' => []];
 
                     // Skip ahead two lines to skip sep line
                     $row += 2;
