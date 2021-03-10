@@ -24,6 +24,13 @@
         "phpunit/phpunit": ">=7.0",
         "orchestra/testbench": ">=3.8.0"
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sfneal\\LaravelHelpers\\Providers\\AppInfoServiceProvider"
+            ]
+        }
+    },
     "autoload": {
         "psr-4": {
             "Sfneal\\Helpers\\Laravel\\": "src"
