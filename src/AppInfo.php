@@ -25,7 +25,7 @@ class AppInfo
     {
         return Cache::rememberForever(self::cacheKey('version'), function () {
             // toto: refactor environment method to AppInfo
-            return trim(config('app-info.version').(LaravelHelpers::isDevelopmentEnvironment() ? ' (dev)' : ''));
+            return trim(config('app-info.version').(self::isEnvironmentDevelopment() ? ' (dev)' : ''));
         });
     }
 
