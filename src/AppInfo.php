@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Sfneal\Helpers\Laravel;
 
 use ErrorException;

@@ -3,7 +3,6 @@
 use Sfneal\Helpers\Laravel\AppInfo;
 use Sfneal\Helpers\Laravel\LaravelHelpers;
 
-
 /**
  * Shortcode helper function for retrieving the application's version.
  *
@@ -13,7 +12,6 @@ function version()
 {
     return AppInfo::version();
 }
-
 
 /**
  * Determine if the Application is running in a 'production' environment.
