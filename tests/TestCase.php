@@ -22,11 +22,11 @@ class TestCase extends OrchestraTestCase
 
         $app['config']->set(
             'app-info.version',
-            file_get_contents(base_path('version.txt'))
+            file_get_contents(__DIR__.'/../version.txt')
         );
         $app['config']->set(
             'app-info.changelog_path',
-            base_path('changelog.txt')
+            __DIR__.'/../changelog.txt'
         );
     }
 
