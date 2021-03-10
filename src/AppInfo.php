@@ -143,7 +143,7 @@ class AppInfo
      */
     public static function isVersionTag(string $tag): bool
     {
-        return Cache::rememberForever(self::cacheKey("version#is-{$tag}"), function () use ($tag) {
+        return Cache::rememberForever(self::cacheKey("version", "is-{$tag}"), function () use ($tag) {
             return (new StringHelpers(self::version()))->inString($tag);
         });
     }
