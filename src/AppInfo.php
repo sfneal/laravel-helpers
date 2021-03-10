@@ -149,6 +149,28 @@ class AppInfo
     }
 
     /**
+     * Determine if the Application is running in a 'production' environment.
+     *
+     * @return bool
+     */
+    public static function isEnvironmentProduction(): bool
+    {
+        // todo: add use of config
+        return env('APP_ENV') == 'production';
+    }
+
+    /**
+     * Determine if the Application is running in a 'development' environment.
+     *
+     * @return bool
+     */
+    public static function isEnvironmentDevelopment(): bool
+    {
+        // todo: add use of config
+        return env('APP_ENV') == 'development';
+    }
+
+    /**
      * Retrieve a cache key for a particular service item.
      *
      * @param string      $item

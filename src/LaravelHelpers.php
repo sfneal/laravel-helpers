@@ -53,28 +53,6 @@ class LaravelHelpers
     }
 
     /**
-     * Determine if the Application is running in a 'production' environment.
-     *
-     * @return bool
-     */
-    public static function isProductionEnvironment(): bool
-    {
-        // todo: add use of config
-        return env('APP_ENV') == 'production';
-    }
-
-    /**
-     * Determine if the Application is running in a 'development' environment.
-     *
-     * @return bool
-     */
-    public static function isDevelopmentEnvironment(): bool
-    {
-        // todo: add use of config
-        return env('APP_ENV') == 'development';
-    }
-
-    /**
      * Serialize and simple hash a value to create a unique ID.
      *
      * @param $value
