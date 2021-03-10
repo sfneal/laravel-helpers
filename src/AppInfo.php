@@ -23,7 +23,8 @@ class AppInfo
     public static function version()
     {
         return Cache::rememberForever(self::cacheKey('version'), function () {
-            return config('app-info.version').((env('APP_ENV') == 'development') ? ' (dev)' : '');
+            // toto: refactor environment method to AppInfo
+            return config('app-info.version').(LaravelHelpers::isDevelopmentEnvironment() ? ' (dev)' : '');
         });
     }
 
