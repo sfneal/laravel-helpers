@@ -67,3 +67,9 @@ All notable changes to `laravel-helpers` will be documented in this file
 
 ## 2.0.1 - 2021-03-10
 - fix ServiceProvider namespace in composer.json
+
+
+## 2.0.2 - 2021-03-11
+ - optimize return type hinting
+ - reformat linebreaks & whitespace
+ - fix `cacheKey()` method to use config 'cache_prefix' value & cut CACHE_PREFIX const

@@ -8,53 +8,56 @@ use Sfneal\Helpers\Strings\StringHelpers;
 
 class AppInfo
 {
-    // todo: add config values for version?
-    // todo: add invalidate cache methods
-
-    /**
-     * Redis Cache Key prefix.
-     */
-    private const CACHE_PREFIX = 'app';
-
     /**
      * Retrieve the Application's version.
      *
-     * @return mixed
+     * @return string
      */
-    public static function version()
+    public static function version(): string
     {
-        return Cache::rememberForever(self::cacheKey('version'), function () {
-            // toto: refactor environment method to AppInfo
-            return trim(config('app-info.version')).(self::isEnvDevelopment() ? ' (dev)' : '');
-        });
+        return Cache::rememberForever(
+            // Cache key
+            self::cacheKey('version'),
+
+            // Value to cache
+            function () {
+                return trim(config('app-info.version')).(self::isEnvDevelopment() ? ' (dev)' : '');
+            }
+        );
     }
 
     /**
      * Retrieve an array of changes made to a particular application version.
      *
      * @param string|null $version
-     *
-     * @return mixed
+     * @return array|null
      */
-    public static function versionChanges(string $version = null)
+    public static function versionChanges(string $version = null): ?array
     {
         // Get current version changes if $version wasn't passed
         $version = $version ?? self::version();
 
-        return Cache::rememberForever(self::cacheKey('changelog', $version), function () use ($version) {
-            try {
-                return self::changelog()[$version];
-            } catch (ErrorException $exception) {
+        return Cache::rememberForever(
+            // Cache key
+            self::cacheKey('changelog', $version),
+
+            // Value to cache
+            function () use ($version) {
+                try {
+                    return self::changelog()[$version];
+                } catch (ErrorException $exception) {
+                    return null;
+                }
             }
-        });
+        );
     }
 
     /**
      * Retrieve the Application's changelog.
      *
-     * @return mixed
+     * @return array
      */
-    public static function changelog()
+    public static function changelog(): array
     {
         return Cache::rememberForever(self::cacheKey('changelog'), function () {
             // Read the changelog
@@ -143,9 +146,15 @@ class AppInfo
      */
     public static function isVersionTag(string $tag): bool
     {
-        return Cache::rememberForever(self::cacheKey('version', "is-{$tag}"), function () use ($tag) {
-            return (new StringHelpers(self::version()))->inString($tag);
-        });
+        return Cache::rememberForever(
+            // Cache key
+            self::cacheKey('version', "is-{$tag}"),
+
+            // Value to cache
+            function () use ($tag) {
+                return (new StringHelpers(self::version()))->inString($tag);
+            }
+        );
     }
 
     /**
@@ -189,6 +198,6 @@ class AppInfo
      */
     private static function cacheKey(string $item, string $identifier = null): string
     {
-        return self::CACHE_PREFIX.':'.$item.(isset($identifier) ? '#'.$identifier : '');
+        return config('app-info.cache_prefix').':'.$item.(isset($identifier) ? '#'.$identifier : '');
     }
 }
