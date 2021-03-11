@@ -11,11 +11,6 @@ class AppInfo
     // todo: add invalidate cache methods
 
     /**
-     * Redis Cache Key prefix.
-     */
-    private const CACHE_PREFIX = 'app';
-
-    /**
      * Retrieve the Application's version.
      *
      * @return mixed
