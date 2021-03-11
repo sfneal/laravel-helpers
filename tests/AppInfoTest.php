@@ -168,6 +168,15 @@ class AppInfoTest extends TestCase
     }
 
     /** @test */
+    public function isEnvTesting()
+    {
+        $output = AppInfo::isEnvTesting();
+
+        $this->assertIsBool($output);
+        $this->assertTrue($output);
+    }
+
+    /** @test */
     public function env()
     {
         $expected1 = 'testing';

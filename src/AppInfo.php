@@ -178,6 +178,16 @@ class AppInfo
     }
 
     /**
+     * Determine if the Application is running in a 'testing' environment.
+     *
+     * @return bool
+     */
+    public static function isEnvTesting(): bool
+    {
+        return self::isEnv('testing');
+    }
+
+    /**
      * Determine if the application is in a particular environment.
      *
      * @param string $env
