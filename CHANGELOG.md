@@ -73,3 +73,8 @@ All notable changes to `laravel-helpers` will be documented in this file
  - optimize return type hinting
  - reformat linebreaks & whitespace
  - fix `cacheKey()` method to use config 'cache_prefix' value & cut CACHE_PREFIX const
+
+
+## 2.1.0 - 2021-03-11
+- refactor `isProductionEnvironment()` helper to `isEnvProduction()` to match AppInfo method
+- refactor `isDevelopmentEnvironment()` helper to `isEnvDevelopment()` to match AppInfo method

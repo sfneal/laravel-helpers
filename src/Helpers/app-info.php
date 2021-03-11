@@ -17,7 +17,7 @@ function version()
  *
  * @return bool
  */
-function isProductionEnvironment(): bool
+function isEnvProduction(): bool
 {
     return AppInfo::isEnvProduction();
 }
@@ -27,7 +27,7 @@ function isProductionEnvironment(): bool
  *
  * @return bool
  */
-function isDevelopmentEnvironment(): bool
+function isEnvDevelopment(): bool
 {
     return AppInfo::isEnvDevelopment();
 }
