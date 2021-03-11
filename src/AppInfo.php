@@ -21,7 +21,7 @@ class AppInfo
 
             // Value to cache
             function () {
-                return trim(config('app-info.version')) . (self::isEnvDevelopment() ? ' (dev)' : '');
+                return trim(config('app-info.version')).(self::isEnvDevelopment() ? ' (dev)' : '');
             }
         );
     }
@@ -199,6 +199,6 @@ class AppInfo
      */
     private static function cacheKey(string $item, string $identifier = null): string
     {
-        return config('app-info.cache_prefix'). ':' . $item . (isset($identifier) ? '#' . $identifier : '');
+        return config('app-info.cache_prefix').':'.$item.(isset($identifier) ? '#'.$identifier : '');
     }
 }
