@@ -188,6 +188,6 @@ class AppInfo
      */
     private static function cacheKey(string $item, string $identifier = null): string
     {
-        return self::CACHE_PREFIX.':'.$item.(isset($identifier) ? '#'.$identifier : '');
+        return config('app-info.cache_prefix'). ':' . $item . (isset($identifier) ? '#' . $identifier : '');
     }
 }
