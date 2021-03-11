@@ -78,3 +78,8 @@ All notable changes to `laravel-helpers` will be documented in this file
 ## 2.1.0 - 2021-03-11
 - refactor `isProductionEnvironment()` helper to `isEnvProduction()` to match AppInfo method
 - refactor `isDevelopmentEnvironment()` helper to `isEnvDevelopment()` to match AppInfo method
+
+
+## 2.1.1 - 2021-03-11
+- add `AppInfo::env()` method for quickly retrieving the application environment
+- add `AppInfo::isEnvTesting()` method for checking if the application is in a 'testing' environment
