@@ -8,8 +8,6 @@ use Sfneal\Helpers\Strings\StringHelpers;
 
 class AppInfo
 {
-    // todo: add invalidate cache methods
-
     /**
      * Retrieve the Application's version.
      *
