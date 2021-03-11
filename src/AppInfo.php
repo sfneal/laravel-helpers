@@ -30,7 +30,6 @@ class AppInfo
      * Retrieve an array of changes made to a particular application version.
      *
      * @param string|null $version
-     *
      * @return array|null
      */
     public static function versionChanges(string $version = null): ?array
