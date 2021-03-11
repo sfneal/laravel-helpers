@@ -186,4 +186,25 @@ class LaravelHelpersTest extends TestCase
         $this->assertTrue($isSerialized);
         $this->assertFalse($isNotSerialized);
     }
+
+    /** @test */
+    public function formatNumber()
+    {
+        $data = [
+            900 => '900',
+            10000 => '10k',
+            15000 => '15k',
+            30500 => '30.5k',
+            701500 => '701.5k',
+            16033 => '16k',
+            16333 => '16.3k',
+        ];
+
+        foreach ($data as $number => $expected) {
+            $output = LaravelHelpers::formatNumber($number);
+
+            $this->assertIsString($output);
+            $this->assertEquals($expected, $output);
+        }
+    }
 }
