@@ -129,4 +129,29 @@ class LaravelHelpers
 
         return false;
     }
+
+    /**
+     * Shorten a number by adding alphanumeric notation denoting thousands, millions, billing or trillions
+     *
+     *  - example: AppInfo::formatNumber(10000) -> '10k'
+     *  - https://stackoverflow.com/questions/4116499/php-count-round-thousand-to-a-k-style-count-like-facebook-share-twitter-bu/36365553
+     *
+     * @param int $number
+     * @return string
+     */
+    public static function formatNumber(int $number): string
+    {
+        if($number > 1000) {
+            $x = round($number);
+            $x_number_format = number_format($x);
+            $x_array = explode(',', $x_number_format);
+            $x_parts = array('k', 'm', 'b', 't');
+            $x_count_parts = count($x_array) - 1;
+            $x_display = $x_array[0] . ((int) $x_array[1][0] !== 0 ? '.' . $x_array[1][0] : '');
+            $x_display .= $x_parts[$x_count_parts - 1];
+            return $x_display;
+        }
+
+        return $number;
+    }
 }
