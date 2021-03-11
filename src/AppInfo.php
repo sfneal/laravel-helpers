@@ -11,9 +11,9 @@ class AppInfo
     /**
      * Retrieve the Application's version.
      *
-     * @return mixed
+     * @return string
      */
-    public static function version()
+    public static function version(): string
     {
         return Cache::rememberForever(
             // Cache key
@@ -21,7 +21,7 @@ class AppInfo
 
             // Value to cache
             function () {
-                return trim(config('app-info.version')).(self::isEnvDevelopment() ? ' (dev)' : '');
+                return trim(config('app-info.version')) . (self::isEnvDevelopment() ? ' (dev)' : '');
             }
         );
     }
