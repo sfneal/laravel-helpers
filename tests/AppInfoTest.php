@@ -166,4 +166,20 @@ class AppInfoTest extends TestCase
         $this->assertTrue($output);
         $this->assertFalse(AppInfo::isEnvProduction());
     }
+
+    /** @test */
+    public function env()
+    {
+        $expected1 = 'testing';
+        $output1 = AppInfo::env();
+        $this->assertIsString($output1);
+        $this->assertEquals($expected1, $output1);
+
+        $expected2 = 'production';
+        $this->app['config']->set('app.env', $expected2);
+
+        $output2 = AppInfo::env();
+        $this->assertIsString($output2);
+        $this->assertEquals($expected2, $output2);
+    }
 }

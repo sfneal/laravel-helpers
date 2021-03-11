@@ -185,7 +185,17 @@ class AppInfo
      */
     public static function isEnv(string $env): bool
     {
-        return config('app.env') == $env;
+        return self::env() == $env;
+    }
+
+    /**
+     * Retrieve the application's environment.
+     *
+     * @return string|null
+     */
+    public static function env(): ?string
+    {
+        return config('app.env');
     }
 
     /**
