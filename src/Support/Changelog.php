@@ -86,4 +86,37 @@ class Changelog
             }
         );
     }
+
+    /**
+     * Retrieve an array of the version history
+     *
+     *  - optionally include the release date in the array values
+     *
+     * @param bool $releaseDates
+     * @return array
+     */
+    public function versions(bool $releaseDates = false): array
+    {
+        // Flat array of versions
+        $versions = array_keys($this->changelog());
+
+        // Return an array of version keys & release date values
+        if ($releaseDates) {
+            // todo: optimize this
+            return array_combine(
+                $versions,
+                array_map(
+                    function ($array) {
+                        return $array['date'];
+                    },
+                    array_values($this->changelog())
+                )
+            );
+        }
+
+        // Return a array of versions
+        else {
+            return $versions;
+        }
+    }
 }

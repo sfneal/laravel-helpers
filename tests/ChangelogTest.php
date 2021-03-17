@@ -2,7 +2,7 @@
 
 namespace Sfneal\Helpers\Laravel\Tests;
 
-use Sfneal\Helpers\Laravel\AppInfo;
+use Sfneal\Helpers\Laravel\Support\Changelog;
 
 class ChangelogTest extends TestCase
 {
@@ -17,7 +17,7 @@ class ChangelogTest extends TestCase
         ];
 
         $version = '0.4.0';
-        $output = AppInfo::versionChanges($version);
+        $output = (new Changelog())->versionChanges($version);
 
         $this->assertIsArray($output);
         $this->assertIsString($output['date']);
@@ -76,9 +76,54 @@ class ChangelogTest extends TestCase
                 ],
             ],
         ];
-        $output = AppInfo::changelog();
+        $output = (new Changelog())->changelog();
 
         $this->assertIsArray($output);
+        $this->assertEquals($expected, $output);
+    }
+
+    /** @test */
+    public function versions()
+    {
+        $expected = [
+            '0.5.0',
+            '0.4.1',
+            '0.4.0',
+            '0.3.1',
+            '0.3.0',
+            '0.2.0',
+            '0.1.0',
+        ];
+
+        $output = (new Changelog())->versions();
+
+        $this->assertIsArray($output);
+        foreach ($output as $o) {
+            $this->assertIsString($o);
+        }
+        $this->assertEquals($expected, $output);
+    }
+
+    /** @test */
+    public function versionsWithReleaseDates()
+    {
+        $expected = [
+            '0.5.0' => '2021-01-27',
+            '0.4.1' => '2020-12-03',
+            '0.4.0' => '2020-12-01',
+            '0.3.1' => '2020-11-30',
+            '0.3.0' => '2020-10-07',
+            '0.2.0' => '2020-09-08',
+            '0.1.0' => '2020-08-20',
+        ];
+
+        $output = (new Changelog())->versions(true);
+
+        $this->assertIsArray($output);
+        foreach ($output as $k => $v) {
+            $this->assertIsString($k);
+            $this->assertIsString($v);
+        }
         $this->assertEquals($expected, $output);
     }
 }
