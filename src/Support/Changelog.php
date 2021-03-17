@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Cache;
 
 class Changelog
 {
+    // todo: add ability to replace package names (user/package) with github links
+
     /**
      * @var string
      */
