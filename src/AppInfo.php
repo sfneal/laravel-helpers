@@ -61,9 +61,7 @@ class AppInfo
      */
     public static function changelog(): array
     {
-        return Cache::rememberForever((new CacheKey('changelog'))->execute(), function () {
-            return (new Changelog())->execute();
-        });
+        return (new Changelog())->execute();
     }
 
     /**
