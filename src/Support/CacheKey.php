@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Helpers\Laravel\Support;
-
 
 use Sfneal\Actions\AbstractAction;
 
@@ -27,7 +25,7 @@ class CacheKey extends AbstractAction
     public function __construct(string $item, string $identifier = null)
     {
         $this->item = $item;
-        $this->identifier = (isset($identifier) ? '#' . $identifier : '');
+        $this->identifier = (isset($identifier) ? '#'.$identifier : '');
     }
 
     /**
@@ -37,6 +35,6 @@ class CacheKey extends AbstractAction
      */
     public function execute(): string
     {
-        return config('app-info.cache_prefix') . ':' . $this->item . $this->identifier;
+        return config('app-info.cache_prefix').':'.$this->item.$this->identifier;
     }
 }
