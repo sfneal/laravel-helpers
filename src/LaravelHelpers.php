@@ -5,6 +5,7 @@ namespace Sfneal\Helpers\Laravel;
 use Illuminate\Support\Facades\Cache;
 use ReflectionClass;
 use ReflectionException;
+use Sfneal\Helpers\Laravel\Support\CacheKey;
 
 class LaravelHelpers
 {
@@ -15,7 +16,7 @@ class LaravelHelpers
      */
     public static function alphabet(): array
     {
-        return Cache::rememberForever('alphabet', function () {
+        return Cache::rememberForever((new CacheKey('alphabet'))->execute(), function () {
             return range('A', 'Z');
         });
     }

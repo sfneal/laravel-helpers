@@ -4,6 +4,7 @@ namespace Sfneal\Helpers\Laravel;
 
 use ErrorException;
 use Illuminate\Support\Facades\Cache;
+use Sfneal\Helpers\Laravel\Support\CacheKey;
 use Sfneal\Helpers\Laravel\Support\Changelog;
 use Sfneal\Helpers\Strings\StringHelpers;
 
@@ -18,7 +19,7 @@ class AppInfo
     {
         return Cache::rememberForever(
             // Cache key
-            self::cacheKey('version'),
+            (new CacheKey('version'))->execute(),
 
             // Value to cache
             function () {
@@ -40,7 +41,7 @@ class AppInfo
 
         return Cache::rememberForever(
             // Cache key
-            self::cacheKey('changelog', $version),
+            (new CacheKey('changelog', $version))->execute(),
 
             // Value to cache
             function () use ($version) {
@@ -60,7 +61,7 @@ class AppInfo
      */
     public static function changelog(): array
     {
-        return Cache::rememberForever(self::cacheKey('changelog'), function () {
+        return Cache::rememberForever((new CacheKey('changelog'))->execute(), function () {
             return (new Changelog())->execute();
         });
     }
@@ -120,7 +121,7 @@ class AppInfo
     {
         return Cache::rememberForever(
             // Cache key
-            self::cacheKey('version', "is-{$tag}"),
+            (new CacheKey('version', "is-{$tag}"))->execute(),
 
             // Value to cache
             function () use ($tag) {
@@ -178,18 +179,5 @@ class AppInfo
     public static function env(): ?string
     {
         return config('app.env');
-    }
-
-    /**
-     * Retrieve a cache key for a particular service item.
-     *
-     * @param string      $item
-     * @param string|null $identifier
-     *
-     * @return string
-     */
-    private static function cacheKey(string $item, string $identifier = null): string
-    {
-        return config('app-info.cache_prefix').':'.$item.(isset($identifier) ? '#'.$identifier : '');
     }
 }
