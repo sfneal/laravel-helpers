@@ -87,3 +87,8 @@ All notable changes to `laravel-helpers` will be documented in this file
 
 ## 2.1.2 - 2021-03-11
 - add `AppInfo::formatNumber()` method for shortening a number (10000 => '10k')
+
+
+## 2.2.0 - 2021-03-11
+- make Sfneal\Helpers\Laravel\Support\Changelog action for handling changelog reading
+- add `changelog()` & `versionChanges()` methods to Changelog
