@@ -32,7 +32,7 @@ class Changelog
      */
     public function changelog(): array
     {
-        return Cache::rememberForever((new CacheKey("changelog:$this->path"))->execute(), function () {
+        return Cache::rememberForever((new CacheKey("changelog:$this->path", 'changelog'))->execute(), function () {
             // Read the changelog
             $file_lines = file($this->path);
             $changes = [];
