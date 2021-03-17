@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Sfneal\Helpers\Laravel\Support;
 
 use ErrorException;
@@ -90,7 +89,7 @@ class Changelog
     }
 
     /**
-     * Retrieve an array of the version history
+     * Retrieve an array of the version history.
      *
      *  - optionally include the release date in the array values
      *
