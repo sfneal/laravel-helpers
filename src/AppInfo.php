@@ -2,7 +2,6 @@
 
 namespace Sfneal\Helpers\Laravel;
 
-use ErrorException;
 use Illuminate\Support\Facades\Cache;
 use Sfneal\Helpers\Laravel\Support\CacheKey;
 use Sfneal\Helpers\Laravel\Support\Changelog;
@@ -37,21 +36,7 @@ class AppInfo
     public static function versionChanges(string $version = null): ?array
     {
         // Get current version changes if $version wasn't passed
-        $version = $version ?? self::version();
-
-        return Cache::rememberForever(
-            // Cache key
-            (new CacheKey('changelog', $version))->execute(),
-
-            // Value to cache
-            function () use ($version) {
-                try {
-                    return self::changelog()[$version];
-                } catch (ErrorException $exception) {
-                    return null;
-                }
-            }
-        );
+        return (new Changelog())->versionChanges($version ?? self::version());
     }
 
     /**
@@ -61,7 +46,7 @@ class AppInfo
      */
     public static function changelog(): array
     {
-        return (new Changelog())->execute();
+        return (new Changelog())->changelog();
     }
 
     /**

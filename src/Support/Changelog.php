@@ -3,11 +3,10 @@
 
 namespace Sfneal\Helpers\Laravel\Support;
 
-
+use ErrorException;
 use Illuminate\Support\Facades\Cache;
-use Sfneal\Actions\AbstractAction;
 
-class Changelog extends AbstractAction
+class Changelog
 {
     /**
      * @var string
@@ -29,9 +28,9 @@ class Changelog extends AbstractAction
      *
      * @return array
      */
-    public function execute(): array
+    public function changelog(): array
     {
-        return Cache::rememberForever((new CacheKey('changelog', $this->path))->execute(), function () {
+        return Cache::rememberForever((new CacheKey("changelog:$this->path"))->execute(), function () {
             // Read the changelog
             $file_lines = file($this->path);
             $changes = [];
@@ -63,5 +62,28 @@ class Changelog extends AbstractAction
 
             return $changes;
         });
+    }
+
+    /**
+     * Retrieve an array of changes made to a particular application version.
+     *
+     * @param string|null $version
+     * @return array|null
+     */
+    public function versionChanges(string $version): ?array
+    {
+        return Cache::rememberForever(
+            // Cache key
+            (new CacheKey("changelog:$this->path", $version))->execute(),
+
+            // Value to cache
+            function () use ($version) {
+                try {
+                    return $this->changelog()[$version];
+                } catch (ErrorException $exception) {
+                    return null;
+                }
+            }
+        );
     }
 }
