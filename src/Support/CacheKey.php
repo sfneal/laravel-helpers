@@ -2,9 +2,9 @@
 
 namespace Sfneal\Helpers\Laravel\Support;
 
-use Sfneal\Actions\AbstractAction;
+use Sfneal\Actions\Action;
 
-class CacheKey extends AbstractAction
+class CacheKey extends Action
 {
     /**
      * @var string

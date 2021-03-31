@@ -92,3 +92,7 @@ All notable changes to `laravel-helpers` will be documented in this file
 ## 2.2.0 - 2021-03-17
 - make Sfneal\Helpers\Laravel\Support\Changelog action for handling changelog reading
 - add `changelog()` & `versionChanges()` methods to Changelog
+
+
+## 2.3.0 - 2021-03-31
+- add sfneal/actions min version 2.0 to composer requirements
