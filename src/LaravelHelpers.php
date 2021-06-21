@@ -156,4 +156,16 @@ class LaravelHelpers
 
         return $number;
     }
+
+    /**
+     * Convert a decimal (float) into a human-readable percentage.
+     *
+     * @param float $number
+     * @param int $decimals
+     * @return string
+     */
+    public static function percentage(float $number, int $decimals = 2): string
+    {
+        return round($number * 100, $decimals) . '%';
+    }
 }

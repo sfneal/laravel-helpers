@@ -96,3 +96,7 @@ All notable changes to `laravel-helpers` will be documented in this file
 
 ## 2.3.0 - 2021-03-31
 - add sfneal/actions min version 2.0 to composer requirements
+
+
+## 2.4.0 - 2021-06-21
+- add `LaravelHelpers::percentage()` method for converting decimals to human-readable percentages
