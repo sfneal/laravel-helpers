@@ -166,6 +166,6 @@ class LaravelHelpers
      */
     public static function percentage(float $number, int $decimals = 2): string
     {
-        return round($number * 100, $decimals) . '%';
+        return round($number * 100, $decimals).'%';
     }
 }
