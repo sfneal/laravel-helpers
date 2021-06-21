@@ -207,4 +207,52 @@ class LaravelHelpersTest extends TestCase
             $this->assertEquals($expected, $output);
         }
     }
+
+    /** @test */
+    public function percentage()
+    {
+        $data1 = [
+            [
+                'float' => 0.93412,
+                'expected' => '93.41%',
+            ],
+            [
+                'float' => 1,
+                'expected' => '100%',
+            ],
+            [
+                'float' => 0.345689,
+                'expected' => '34.57%',
+            ],
+        ];
+
+        foreach ($data1 as $data) {
+            $output = LaravelHelpers::percentage($data['float']);
+
+            $this->assertIsString($output);
+            $this->assertEquals($data['expected'], $output);
+        }
+
+        $data2 = [
+            [
+                'float' => 0.93412,
+                'expected' => '93%',
+            ],
+            [
+                'float' => 1,
+                'expected' => '100%',
+            ],
+            [
+                'float' => .345689,
+                'expected' => '35%',
+            ],
+        ];
+
+        foreach ($data2 as $data) {
+            $output = LaravelHelpers::percentage($data['float'], 0);
+
+            $this->assertIsString($output);
+            $this->assertEquals($data['expected'], $output);
+        }
+    }
 }
