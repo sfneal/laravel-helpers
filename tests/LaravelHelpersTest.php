@@ -214,15 +214,15 @@ class LaravelHelpersTest extends TestCase
         $data1 = [
             [
                 'float' => 0.93412,
-                'expected' => '93.41%'
+                'expected' => '93.41%',
             ],
             [
                 'float' => 1,
-                'expected' => '100%'
+                'expected' => '100%',
             ],
             [
                 'float' => 0.345689,
-                'expected' => '34.57%'
+                'expected' => '34.57%',
             ],
         ];
 
@@ -236,15 +236,15 @@ class LaravelHelpersTest extends TestCase
         $data2 = [
             [
                 'float' => 0.93412,
-                'expected' => '93%'
+                'expected' => '93%',
             ],
             [
                 'float' => 1,
-                'expected' => '100%'
+                'expected' => '100%',
             ],
             [
                 'float' => .345689,
-                'expected' => '35%'
+                'expected' => '35%',
             ],
         ];
 
