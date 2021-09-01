@@ -100,3 +100,7 @@ All notable changes to `laravel-helpers` will be documented in this file
 
 ## 2.4.0 - 2021-06-21
 - add `LaravelHelpers::percentage()` method for converting decimals to human-readable percentages
+
+
+## 2.4.1 - 2021-09-01
+- cut use of '#' cache key delimiters
