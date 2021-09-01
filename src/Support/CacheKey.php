@@ -25,7 +25,7 @@ class CacheKey extends Action
     public function __construct(string $item, string $identifier = null)
     {
         $this->item = $item;
-        $this->identifier = (isset($identifier) ? '#'.$identifier : '');
+        $this->identifier = (isset($identifier) ? ':'.$identifier : '');
     }
 
     /**
