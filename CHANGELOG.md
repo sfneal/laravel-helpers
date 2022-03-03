@@ -104,3 +104,8 @@ All notable changes to `laravel-helpers` will be documented in this file
 
 ## 2.4.1 - 2021-09-01
 - cut use of '#' cache key delimiters
+
+
+## 2.4.2 - 2022-03-03
+- bump composer dependency constraints to prevent install errors
+- add use GitHub actions
