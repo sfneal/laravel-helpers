@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+    laravel-helpers:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: "stephenneal/laravel-helpers:${TAG}"
+        env_file: .env.docker
+        container_name: laravel-helpers
+        tty: true
+        volumes:
+            - laravel-helpers:/var/www
+        depends_on:
+            - laravel-helpers-cache
+        networks:
+            - laravel-helpers-network
+
+    laravel-helpers-cache:
+        container_name: laravel-helpers-cache
+        image: redis:6-alpine
+        command: ["redis-server", "--appendonly yes", "--port 9576"]
+        ports:
+            - "9576:9576"
+        volumes:
+            - laravel-helpers-cache:/data
+        networks:
+            - laravel-helpers-network
+
+
+# Networks
+networks:
+    laravel-helpers-network:
+        driver: bridge
+
+# Volumes
+volumes:
+    laravel-helpers:
+    laravel-helpers-cache:
