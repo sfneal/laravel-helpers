@@ -24,7 +24,7 @@ class LaravelHelpers
     /**
      * Return the index of a letter in the alphabet.
      *
-     * @param int $index
+     * @param  int  $index
      * @return string
      */
     public static function alphabetIndex(int $index): string
@@ -36,8 +36,8 @@ class LaravelHelpers
      * Retrieve a class's short name (without namespace).
      *
      * @param $class
-     * @param bool $short Full name or short name
-     * @param string|null $default
+     * @param  bool  $short  Full name or short name
+     * @param  string|null  $default
      * @return string
      */
     public static function getClassName($class, $short = false, $default = null): string
@@ -69,7 +69,7 @@ class LaravelHelpers
      *
      * @param $min
      * @param $max
-     * @param int $decimals
+     * @param  int  $decimals
      * @return float
      */
     public static function randomFloat(int $min, int $max, int $decimals = 2): float
@@ -82,7 +82,7 @@ class LaravelHelpers
     /**
      * Determine if a string is a Binary String.
      *
-     * @param string $string
+     * @param  string  $string
      * @return bool
      */
     public static function isBinary(string $string): bool
@@ -137,7 +137,7 @@ class LaravelHelpers
      *  - example: AppInfo::formatNumber(10000) -> '10k'
      *  - https://stackoverflow.com/questions/4116499/php-count-round-thousand-to-a-k-style-count-like-facebook-share-twitter-bu/36365553
      *
-     * @param int $number
+     * @param  int  $number
      * @return string
      */
     public static function formatNumber(int $number): string
@@ -160,8 +160,8 @@ class LaravelHelpers
     /**
      * Convert a decimal (float) into a human-readable percentage.
      *
-     * @param float $number
-     * @param int $decimals
+     * @param  float  $number
+     * @param  int  $decimals
      * @return string
      */
     public static function percentage(float $number, int $decimals = 2): string

@@ -17,7 +17,7 @@ class Changelog
     /**
      * Changelog constructor.
      *
-     * @param string|null $path
+     * @param  string|null  $path
      */
     public function __construct(string $path = null)
     {
@@ -68,7 +68,7 @@ class Changelog
     /**
      * Retrieve an array of changes made to a particular application version.
      *
-     * @param string|null $version
+     * @param  string|null  $version
      * @return array|null
      */
     public function versionChanges(string $version): ?array
@@ -93,7 +93,7 @@ class Changelog
      *
      *  - optionally include the release date in the array values
      *
-     * @param bool $releaseDates
+     * @param  bool  $releaseDates
      * @return array
      */
     public function versions(bool $releaseDates = false): array

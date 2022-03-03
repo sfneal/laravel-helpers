@@ -30,7 +30,7 @@ class AppInfo
     /**
      * Retrieve an array of changes made to a particular application version.
      *
-     * @param string|null $version
+     * @param  string|null  $version
      * @return array|null
      */
     public static function versionChanges(string $version = null): ?array
@@ -52,8 +52,7 @@ class AppInfo
     /**
      * Determine if a particular Version is running.
      *
-     * @param string $version
-     *
+     * @param  string  $version
      * @return mixed
      */
     public static function isVersion(string $version): bool
@@ -64,8 +63,7 @@ class AppInfo
     /**
      * Determine if a particular Version is running.
      *
-     * @param string $version
-     *
+     * @param  string  $version
      * @return mixed
      */
     public static function isNotVersion(string $version): bool
@@ -96,8 +94,7 @@ class AppInfo
     /**
      * Determine if a particular tag version is running (beta, dev, staging, etc..).
      *
-     * @param string $tag
-     *
+     * @param  string  $tag
      * @return mixed
      */
     public static function isVersionTag(string $tag): bool
@@ -146,7 +143,7 @@ class AppInfo
     /**
      * Determine if the application is in a particular environment.
      *
-     * @param string $env
+     * @param  string  $env
      * @return bool
      */
     public static function isEnv(string $env): bool
