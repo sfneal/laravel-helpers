@@ -19,6 +19,7 @@ class LaravelHelpersTest extends TestCase
 
     /**
      * @test
+     *
      * @throws Exception
      */
     public function alphabetIndex()

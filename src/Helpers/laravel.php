@@ -15,7 +15,7 @@ function alphabet(): array
 /**
  * Return the index of a letter in the alphabet.
  *
- * @param int $index
+ * @param  int  $index
  * @return string
  */
 function alphabetIndex(int $index): string
@@ -27,8 +27,8 @@ function alphabetIndex(int $index): string
  * Retrieve a class's short name (without namespace).
  *
  * @param $class
- * @param bool $short Full name or short name
- * @param string|null $default
+ * @param  bool  $short  Full name or short name
+ * @param  string|null  $default
  * @return string
  */
 function getClassName($class, $short = false, $default = null): string
@@ -52,7 +52,7 @@ function serializeHash($value): int
  *
  * @param $min
  * @param $max
- * @param int $decimals
+ * @param  int  $decimals
  * @return float
  */
 function randomFloat(int $min, int $max, int $decimals = 2): float
@@ -63,7 +63,7 @@ function randomFloat(int $min, int $max, int $decimals = 2): float
 /**
  * Determine if a string is a Binary String.
  *
- * @param string $string
+ * @param  string  $string
  * @return bool
  */
 function isBinary(string $string): bool

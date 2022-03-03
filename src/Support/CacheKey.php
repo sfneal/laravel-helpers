@@ -19,8 +19,8 @@ class CacheKey extends Action
     /**
      * CacheKey constructor.
      *
-     * @param string $item
-     * @param string|null $identifier
+     * @param  string  $item
+     * @param  string|null  $identifier
      */
     public function __construct(string $item, string $identifier = null)
     {
